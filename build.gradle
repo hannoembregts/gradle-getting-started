@@ -1,0 +1,13 @@
+task helloGradle << {
+    println 'Hello from Gradle!'
+}
+
+task helloAgain (dependsOn: helloGradle) << {
+    println 'Hello again!'
+}
+
+task countToFour << {
+    4.times { println "Counting... ${it + 1}" }
+}
+
+3.times { index -> task "dynamicTask${index}" }
